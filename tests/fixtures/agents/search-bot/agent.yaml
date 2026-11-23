@@ -1,0 +1,24 @@
+name: search-bot
+display_name: Search Bot
+description: Search fictional sources and explain what you find.
+avatar: 💬
+tags:
+- test
+starter_prompts:
+- Search the latest research
+- What is in the news today?
+harness:
+  system_prompt:
+    file: prompts/system-prompt.md
+  loop:
+    type: basic
+    max_iterations: 6
+    timeout_seconds: 90
+tools:
+- native: web_search
+  user_toggle: true
+  config:
+    max_results: 5
+- native: fetch_page
+  config:
+    max_chars: 8000

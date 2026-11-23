@@ -1,0 +1,16 @@
+name: plain-bot
+display_name: Plain Bot
+description: A fictional test assistant.
+avatar: "\U0001F4AC"
+tags:
+- test
+starter_prompts:
+- Explain a small idea
+harness:
+  system_prompt: Test instructions
+  loop:
+    type: basic
+    max_iterations: 6
+    timeout_seconds: 90
+  dynamic_system_prompts:
+  - unknown
